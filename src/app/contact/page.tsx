@@ -124,15 +124,20 @@ export default function ContactPage() {
               <p className="text-[9px] tracking-[0.4em] uppercase text-black/35 mb-6 font-bold">Direct Contact</p>
               <div className="space-y-5">
                 {[
-                  { label: "General", email: "hello@shopwith.ab" },
-                  { label: "Orders & Returns", email: "returns@shopwith.ab" },
-                  { label: "Press & Media", email: "press@shopwith.ab" },
-                  { label: "Wholesale", email: "wholesale@shopwith.ab" },
+                  { label: "Phone / WhatsApp", value: "0537412869", href: "tel:0537412869" },
+                  { label: "Snapchat", value: "@shopwith_ab24", href: "https://www.snapchat.com/add/shopwith_ab24" },
+                  { label: "Support & Orders", value: "support@winningedgeinvestment.com", href: "mailto:support@winningedgeinvestment.com" },
+                  { label: "General & Wholesale", value: "hello@shopwith.ab", href: "mailto:hello@shopwith.ab" },
                 ].map((c) => (
                   <div key={c.label}>
-                    <p className="text-[9px] tracking-widest uppercase text-black/35 mb-1">{c.label}</p>
-                    <a href={`mailto:${c.email}`} className="text-sm text-black/60 hover:text-[#ff2a85] transition-colors">
-                      {c.email}
+                    <p className="text-[9px] tracking-widest uppercase text-black/35 mb-1 font-bold">{c.label}</p>
+                    <a
+                      href={c.href}
+                      target={c.href.startsWith("http") ? "_blank" : undefined}
+                      rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-sm font-bold text-black/80 hover:text-[#ff2a85] transition-colors"
+                    >
+                      {c.value}
                     </a>
                   </div>
                 ))}

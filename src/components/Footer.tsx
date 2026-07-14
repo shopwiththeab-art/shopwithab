@@ -31,6 +31,15 @@ const cols = [
       { label: "Contact", href: "/contact" },
     ],
   },
+  {
+    title: "Connect & Contact",
+    links: [
+      { label: "📞 0537412869", href: "tel:0537412869" },
+      { label: "👻 @shopwith_ab24", href: "https://www.snapchat.com/add/shopwith_ab24" },
+      { label: "✉️ Support Email", href: "mailto:support@winningedgeinvestment.com" },
+      { label: "💬 Contact Form", href: "/contact" },
+    ],
+  },
 ];
 
 export default function Footer() {
