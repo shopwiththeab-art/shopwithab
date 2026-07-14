@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #ffffff;
+  --fg: #050505;
+  --accent: #ff2a85;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar — used for horizontal tab rows on mobile */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif;
+}
+.font-pacifico {
+  font-family: var(--font-pacifico), cursive;
+}
+.font-raleway {
+  font-family: var(--font-raleway), sans-serif;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff5f7;
+}
+::-webkit-scrollbar-thumb {
+  background: #e8d5d9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d2b7bd;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: rgba(255, 42, 133, 0.12);
+  color: var(--fg);
+}
+
+/* ===== Animations ===== */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #fff5f7 25%, #fff0f3 50%, #fff5f7 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ===== Admin Portal Light Theme Overrides ===== */
+.admin-portal {
+  background-color: #f8f9fa !important;
+  color: #0f172a !important;
+}
+.admin-portal select,
+.admin-portal option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+.admin-portal .bg-white\/\[0\.03\],
+.admin-portal .bg-white\/5 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.admin-portal .text-white {
+  color: #0f172a !important;
+}
+.admin-portal .text-white\/90,
+.admin-portal .text-white\/85,
+.admin-portal .text-white\/70,
+.admin-portal .text-white\/60 {
+  color: #1e293b !important;
+}
+.admin-portal .text-white\/30,
+.admin-portal .text-white\/25,
+.admin-portal .text-white\/20,
+.admin-portal .text-white\/40,
+.admin-portal .text-white\/50 {
+  color: #64748b !important;
+}
+.admin-portal .border-white\/5,
+.admin-portal .border-white\/10,
+.admin-portal .border-white\/15,
+.admin-portal .border-white\/20,
+.admin-portal .border-white\/25 {
+  border-color: #e2e8f0 !important;
+}
+.admin-portal .hover\:bg-white\/\[0\.02\]:hover,
+.admin-portal .hover\:bg-white\/\[0\.04\]:hover {
+  background-color: #f1f5f9 !important;
+}
+.admin-portal input,
+.admin-portal textarea,
+.admin-portal select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+.admin-portal input::placeholder,
+.admin-portal textarea::placeholder {
+  color: #94a3b8 !important;
+}
+.admin-portal select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+.admin-portal option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+.admin-portal select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+.admin-portal table tr {
+  border-bottom-color: #e2e8f0 !important;
+}
+.admin-portal table th {
+  color: #475569 !important;
+}
+.admin-portal table td {
+  color: #334155 !important;
+}
+.admin-portal .bg-white\/8 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+.admin-portal .text-red-500\/35 {
+  color: #dc2626 !important;
+  opacity: 0.8;
+}
+.admin-portal .text-red-500\/35:hover {
+  color: #b91c1c !important;
+}
+.admin-portal .text-\[\#ff2a85\] {
+  color: #ff2a85 !important;
+}
+.admin-portal .bg-\[\#0d0d0d\] {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+.admin-portal .bg-\[\#0a0a0a\] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.admin-portal .text-red-500\/40 {
+  color: #dc2626 !important;
+  opacity: 0.8;
+}
+.admin-portal .border-red-500\/20 {
+  border-color: rgba(220, 38, 38, 0.3) !important;
+}
+.admin-portal .bg-red-500\/15 {
+  background-color: rgba(220, 38, 38, 0.1) !important;
+}
+.admin-portal .text-red-400 {
+  color: #dc2626 !important;
+}
+.admin-portal .text-green-400 {
+  color: #16a34a !important;
+}
+.admin-portal .bg-green-500\/15 {
+  background-color: rgba(22, 163, 74, 0.1) !important;
+}
+.admin-portal .text-blue-400 {
+  color: #2563eb !important;
+}
+.admin-portal .bg-blue-500\/15 {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+}
+.admin-portal .text-cyan-400 {
+  color: #0891b2 !important;
+}
+.admin-portal .bg-cyan-500\/15 {
+  background-color: rgba(8, 145, 178, 0.1) !important;
+}
+.admin-portal .text-amber-400 {
+  color: #ca8a04 !important;
+}
+.admin-portal .bg-amber-500\/15 {
+  background-color: rgba(202, 138, 4, 0.1) !important;
+}
+.admin-portal .bg-white\/\[0\.03\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.admin-portal .bg-white\/\[0\.05\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.admin-portal .bg-white\/\[0\.02\] {
+  background-color: #f8f9fa !important;
+  border-color: #e2e8f0 !important;
+}
+.admin-portal .border-white\/5 {
+  border-color: #e2e8f0 !important;
+}
+.admin-portal .text-amber-700 {
+  color: #b45309 !important;
+}
+.admin-portal .bg-amber-550\/10 {
+  background-color: rgba(180, 83, 9, 0.1) !important;
+}
+.admin-portal .border-amber-550\/20 {
+  border-color: rgba(180, 83, 9, 0.2) !important;
+}
+.admin-portal .bg-white\/5 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+.admin-portal .bg-white\/10 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+.admin-portal select option {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
